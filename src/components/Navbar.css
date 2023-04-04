@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 
 /* Mobile View */
-@media only screen and (max-device-width: 480px){
+@media only screen and (max-device-width: 480px) {
   .navContainer {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 1000;
   }
-  
+
   .viewContainer {
     background-color: white;
     border: 1px solid gray;
@@ -17,17 +17,17 @@
     padding: 10px 30px 10px 15px;
     margin-left: 5px;
   }
-  
+
   .viewContainer > a {
     text-decoration: none;
     color: black;
     padding: 1px;
   }
-  
+
   .view {
     display: none;
   }
-  
+
   .hamView {
     display: block;
     border: 1px solid gray;
@@ -35,50 +35,51 @@
     padding: 10px;
     margin: 5px;
   }
-  
+
   /* doctors title */
   .viewDoctors {
     display: none;
   }
-  
+
   /* social network icons */
   .socialContainer {
     display: none;
   }
 }
 
-
 /* Desktop View */
-@media only screen and (min-device-width: 480px){
-  .viewContainer.view, .viewContainer {
+@media only screen and (min-device-width: 480px) {
+  .viewContainer.view,
+  .viewContainer {
     margin-left: 15px;
     display: flex;
     flex-direction: column;
   }
-  
+
   .viewContainer > a {
     text-decoration: none;
   }
-  
+
   .viewContainer > a > p {
     color: black;
-    padding: 10px 40px 10px 20px  ;
+    padding: 10px 40px 10px 20px;
     font-weight: 500;
   }
-  
-  .viewContainer > a > p:hover, .select {
+
+  .viewContainer > a > p:hover,
+  .select {
     color: white !important;
-    background-color: #8EB904;
+    background-color: #8eb904;
   }
-  
+
   .view {
     display: block;
   }
-  
+
   .hamView {
     display: none;
   }
-  
+
   /* doctors title */
   .viewDoctors {
     padding-left: 20px;
@@ -90,7 +91,7 @@
     text-decoration: underline;
     transform: rotate(-20deg);
   }
-  
+
   .socialContainer {
     display: flex;
     flex-direction: column;
@@ -100,7 +101,7 @@
     left: 15px;
     margin-bottom: 10px;
   }
-  
+
   .socialIcons {
     display: flex;
     gap: 10px;
