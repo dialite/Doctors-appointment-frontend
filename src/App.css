@@ -36,11 +36,6 @@
   margin-right: 30px;
 }
 
-.doc-details  {
-  align-items: center;
-  justify-content: center;
-}
-
 /* Mobile View */
 @media only screen and (max-device-width: 480px) {
   .AppContainer {
