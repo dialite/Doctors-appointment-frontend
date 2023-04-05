@@ -3,12 +3,12 @@
   .detailsContainer {
     width: 100%;
   }
-  
-  .detailsImage{
+
+  .detailsImage {
     width: 300px;
     height: auto;
   }
-  
+
   .detailsDiv1 {
     display: flex;
     flex-direction: row;
@@ -16,12 +16,12 @@
     justify-content: space-around;
     gap: 50px;
   }
-  
+
   .detailsDiv2 {
     display: flex;
     flex-direction: column;
   }
-  
+
   .detailsDiv3 {
     display: flex;
     flex-direction: row;
@@ -29,26 +29,26 @@
     gap: 50px;
     padding: 0 20px;
   }
-  
+
   .detailsDiv3:nth-child(even) {
     background-color: gainsboro;
   }
-  
+
   .detailsName {
     text-align: end;
     font-size: 2rem;
     margin: 0;
   }
-  
+
   .detailsSubName {
     text-align: end;
     margin-top: 0;
   }
-  
+
   .detailsDivButton {
     text-align: end;
   }
-  
+
   .detailsButton {
     background-color: #8eb904;
     color: white;
@@ -58,7 +58,7 @@
     font-weight: bold;
     font-size: 1rem;
   }
-  
+
   .detailsButton:hover {
     border: 2px solid gainsboro;
     cursor: pointer;
@@ -70,12 +70,12 @@
   .detailsContainer {
     width: 100%;
   }
-  
-  .detailsImage{
+
+  .detailsImage {
     width: 450px;
     height: auto;
   }
-  
+
   .detailsDiv1 {
     display: flex;
     flex-direction: row;
@@ -83,12 +83,12 @@
     justify-content: space-around;
     gap: 50px;
   }
-  
+
   .detailsDiv2 {
     display: flex;
     flex-direction: column;
   }
-  
+
   .detailsDiv3 {
     display: flex;
     flex-direction: row;
@@ -96,26 +96,26 @@
     gap: 150px;
     padding: 0 20px;
   }
-  
+
   .detailsDiv3:nth-child(odd) {
     background-color: gainsboro;
   }
-  
+
   .detailsName {
     text-align: end;
     font-size: 2rem;
     margin: 0;
   }
-  
+
   .detailsSubName {
     text-align: end;
     margin-top: 0;
   }
-  
+
   .detailsDivButton {
     text-align: end;
   }
-  
+
   .detailsButton {
     background-color: #8eb904;
     color: white;
@@ -126,7 +126,7 @@
     font-weight: bold;
     font-size: 1rem;
   }
-  
+
   .detailsButton:hover {
     border: 2px solid gainsboro;
     cursor: pointer;
