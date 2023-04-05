@@ -97,7 +97,7 @@
     padding: 0 20px;
   }
   
-  .detailsDiv3:nth-child(even) {
+  .detailsDiv3:nth-child(odd) {
     background-color: gainsboro;
   }
   
