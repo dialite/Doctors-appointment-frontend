@@ -1,5 +1,6 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
+import './ReservationForm.css';
 
 const ReservationForm = () => {
   return (
@@ -9,7 +10,7 @@ const ReservationForm = () => {
         <form action="submit" className="reservation-form">
           <input
             type="text"
-            className="reservation-form__input"
+            className="form-control"
             id="city"
             name="city"
             placeholder="Enter City"
