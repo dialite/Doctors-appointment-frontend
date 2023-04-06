@@ -30,7 +30,7 @@
     padding: 0 20px;
   }
 
-  .detailsDiv3:nth-child(even) {
+  .detailsDiv3:nth-child(odd) {
     background-color: gainsboro;
   }
 
@@ -55,12 +55,13 @@
     border: 0;
     padding: 15px 25px;
     border-radius: 20px;
+    margin-top: 20px;
     font-weight: bold;
     font-size: 1rem;
   }
 
   .detailsButton:hover {
-    border: 2px solid gainsboro;
+    background-color: green;
     cursor: pointer;
   }
 }
@@ -128,7 +129,7 @@
   }
 
   .detailsButton:hover {
-    border: 2px solid gainsboro;
+    background-color: green;
     cursor: pointer;
   }
 }
