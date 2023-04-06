@@ -39,8 +39,8 @@ const ReservationForm = () => {
             type="datetime-local"
             name="appointmenTime"
             value={appointmenTime}
-            min="2022-08-17T00:00"
-            max="2050-08-17T00:00"
+            min="2023-04-10T00:00"
+            max="2030-04-17T00:00"
             required
           />
         </form>
