@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 import axios from 'axios';
 
 import './Add2.css';
 import './loader.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import { addDoctor, finishDoctor } from '../../redux/doctors/adds';
 
 export default function Add2() {
+  /* Load Redux State */
+  const adds = useSelector((state) => state.add);
+
+  /* Setup Redux dispatch */
+  const dispatch = useDispatch();
+
+  const history = useNavigate();
+
+  // *********************************
+
   const [listingData, setListingData] = useState('');
   const [ansApi, setAnsApi] = useState('');
   const [isLoader, setIsLoader] = useState(false);
@@ -60,8 +73,14 @@ export default function Add2() {
       .then((response) => {
         // console.log(JSON.stringify(response.data));
         setAnsApi(response.data.data.image.url);
+        dispatch(addDoctor({ ...adds, image: response.data.data.image.url }));
         setIsLoader(isLoader);
       });
+  };
+
+  const handleNext = () => {
+    dispatch(finishDoctor(adds));
+    history('/add3');
   };
 
   return (
@@ -104,12 +123,7 @@ export default function Add2() {
 
         <div className={ansApi ? '' : 'hidden'}>
           <h2>Image Attached!!</h2>
-          <h3>
-            URL_image:
-            {' '}
-            <a href={ansApi} target="_blank" rel="noopener noreferrer">{ansApi}</a>
-          </h3>
-          <Link to="/add3"><button type="button" className="add2Button">Next</button></Link>
+          <button type="button" className="add2Button" onClick={handleNext}>Next</button>
         </div>
 
       </div>
