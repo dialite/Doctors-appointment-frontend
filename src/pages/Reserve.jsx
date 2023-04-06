@@ -1,9 +1,8 @@
 import React from 'react';
+import ReservationForm from '../components/reservation/ReservationForm';
 
 export default function Reserve() {
   return (
-    <div>
-      <h2>Reserve</h2>
-    </div>
+    <ReservationForm />
   );
 }
