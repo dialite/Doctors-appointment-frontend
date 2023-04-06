@@ -1,0 +1,135 @@
+/* Mobile View */
+@media only screen and (max-device-width: 480px) {
+  .detailsContainer {
+    width: 100%;
+  }
+
+  .detailsImage {
+    width: 300px;
+    height: auto;
+  }
+
+  .detailsDiv1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+  }
+
+  .detailsDiv2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailsDiv3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 0 20px;
+  }
+
+  .detailsDiv3:nth-child(odd) {
+    background-color: gainsboro;
+  }
+
+  .detailsName {
+    text-align: end;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .detailsSubName {
+    text-align: end;
+    margin-top: 0;
+  }
+
+  .detailsDivButton {
+    text-align: end;
+  }
+
+  .detailsButton {
+    background-color: #8eb904;
+    color: white;
+    border: 0;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .detailsButton:hover {
+    background-color: green;
+    cursor: pointer;
+  }
+}
+
+/* Desktop View */
+@media only screen and (min-device-width: 480px) {
+  .detailsContainer {
+    width: 100%;
+  }
+
+  .detailsImage {
+    width: 450px;
+    height: auto;
+  }
+
+  .detailsDiv1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+  }
+
+  .detailsDiv2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailsDiv3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 150px;
+    padding: 0 20px;
+  }
+
+  .detailsDiv3:nth-child(odd) {
+    background-color: gainsboro;
+  }
+
+  .detailsName {
+    text-align: end;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .detailsSubName {
+    text-align: end;
+    margin-top: 0;
+  }
+
+  .detailsDivButton {
+    text-align: end;
+  }
+
+  .detailsButton {
+    background-color: #8eb904;
+    color: white;
+    border: 0;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .detailsButton:hover {
+    background-color: green;
+    cursor: pointer;
+  }
+}

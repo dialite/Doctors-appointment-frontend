@@ -49,6 +49,10 @@
 
 /* Desktop View */
 @media only screen and (min-device-width: 480px) {
+  .navContainer {
+    flex: 0 0 200px;
+  }
+
   .viewContainer.view,
   .viewContainer {
     margin-left: 15px;
@@ -58,6 +62,7 @@
 
   .viewContainer > a {
     text-decoration: none;
+    width: 100%;
   }
 
   .viewContainer > a > p {
