@@ -1,11 +1,16 @@
+/* eslint-disable max-len */
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './Add.css';
 import { useNavigate } from 'react-router-dom';
+import { addDoctor } from '../../redux/doctors/adds';
 
 export default function Add() {
+  /* Setup Redux dispatch */
+  const dispatch = useDispatch();
+
   const initialState = {
-    id: null,
     name: '',
     lastname: '',
     speciality: '',
@@ -25,8 +30,8 @@ export default function Add() {
   };
 
   const handleNext = () => {
-    if (init.name && init.lastname && init.speciality && init.experience && init.consultation) {
-      alert('Next Step');
+    if (init.name && init.lastname && init.speciality && (init.experience > 0) && (init.consultation > 0)) {
+      dispatch(addDoctor(init));
       history('/add2');
     } else {
       alert('Fill out all fields');
