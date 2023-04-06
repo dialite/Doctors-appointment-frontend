@@ -10,6 +10,7 @@ import Reserve from './pages/Reserve';
 import MyReservations from './pages/MyReservations';
 import Add from './pages/Add';
 import Delete from './pages/Delete';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/add" element={<Add />} />
             <Route path="/delete" element={<Delete />} />
+
+            <Route path="/detailspage/:id" element={<DetailsPage />} />
           </Routes>
         </div>
       </div>
