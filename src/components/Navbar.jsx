@@ -26,7 +26,7 @@ export default function Navbar() {
         <Link to="/" onClick={handleView}><p className={pathView === '/' ? 'select' : ''}>Home</p></Link>
         <Link to="/reserve" onClick={handleView}><p className={pathView === '/reserve' ? 'select' : ''}>Reserve</p></Link>
         <Link to="/myreservations" onClick={handleView}><p className={pathView === '/myreservations' ? 'select' : ''}>My reservation</p></Link>
-        <Link to="/add" onClick={handleView}><p className={pathView === '/add' ? 'select' : ''}>Add doctor</p></Link>
+        <Link to="/add" onClick={handleView}><p className={pathView === '/add' || pathView === '/add2' ? 'select' : ''}>Add doctor</p></Link>
         <Link to="/delete" onClick={handleView}><p className={pathView === '/delete' ? 'select' : ''}>Delete doctor</p></Link>
       </div>
 
