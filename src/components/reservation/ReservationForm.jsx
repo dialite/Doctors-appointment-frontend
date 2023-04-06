@@ -1,23 +1,7 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+/* eslint-disable arrow-body-style */
+import React from 'react';
 
 const ReservationForm = () => {
-  const [city, setCity] = useState('');
-  const [appointmenTime, setAppointmentTime] = useState('');
-
-  const dispatch = useDispatch();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const reservation = {
-      city,
-      appointmenTime,
-    };
-    dispatch(addReservation(reservation));
-    setCity('');
-    setAppointmentTime('');
-  };
-
   return (
     <section className="reservation">
       <div className="reservation-container">
@@ -28,9 +12,7 @@ const ReservationForm = () => {
             className="reservation-form__input"
             id="city"
             name="city"
-            value={city}
             placeholder="Enter City"
-            onClick={handleSubmit}
             required
           />
           <input
@@ -38,11 +20,14 @@ const ReservationForm = () => {
             id="datetime"
             type="datetime-local"
             name="appointmenTime"
-            value={appointmenTime}
             min="2023-04-10T00:00"
             max="2030-04-17T00:00"
             required
           />
+          <select name="doctor" id="doctor">
+            <option value="">Select your doctor</option>
+          </select>
+          <input type="submit" value="Reserver Doctor" className="button1" />
         </form>
       </div>
     </section>
