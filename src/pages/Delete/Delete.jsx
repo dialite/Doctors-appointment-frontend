@@ -13,9 +13,9 @@ export default function Delete() {
   const dispatch = useDispatch();
 
   const handleButton = (id) => {
+    // eslint-disable-next-line no-alert
     const confirmed = window.confirm('Are you sure you want to do this?');
     if (confirmed) {
-      console.log(`delete: ${id}`);
       dispatch(deleteDoctor(id));
     }
   };
@@ -24,8 +24,6 @@ export default function Delete() {
   useEffect(() => {
     dispatch(getAllDoctors());
   }, [dispatch]);
-
-  console.log(doctors);
 
   return (
     <div>

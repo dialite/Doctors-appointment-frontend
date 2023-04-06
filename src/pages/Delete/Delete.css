@@ -8,20 +8,20 @@
   width: 100%;
 }
 
-#customers td, #customers th {
+#customers td,
+#customers th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(even) { background-color: #f2f2f2; }
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover { background-color: #ddd; }
 
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #8eb904;
   color: white;
   text-align: center;

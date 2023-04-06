@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import './Add.css';
 import { useNavigate } from 'react-router-dom';
