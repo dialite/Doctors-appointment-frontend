@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Reserve from './pages/Reserve';
 import MyReservations from './pages/MyReservations';
 import Add from './pages/Add/Add';
-import Delete from './pages/Delete';
+import Delete from './pages/Delete/Delete';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Add2 from './pages/Add2/Add2';
 import Add3 from './pages/Add3/Add3';
