@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './DetailsPage.css';
 import { BsFillCalendar2WeekFill } from 'react-icons/bs';
-import doctorImage from '../../images/doctor1-500.jpg';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllDoctors } from '../../redux/doctors/doctors';
 
 export default function DetailsPage() {
-  const doctors = [
-    {
-      id: 1,
-      name: 'Dr. John Doe',
-      speciality: 'Cardiologist',
-      experience: '10 years',
-      consultation: '30$',
-      image: '../../images/doctor1-500.jpg',
-    },
-  ];
+  /* Load Redux State */
+  const allDoctors = useSelector((state) => state.doctor);
+
+  /* Setup Redux dispatch */
+  const dispatch = useDispatch();
+
+  // *********************************
+
+  const { id } = useParams();
+
+  const doctors = allDoctors.filter((doctor) => doctor.id === parseInt(id, 10));
+
+  /* Clean - Redux movies store */
+  useEffect(() => {
+    dispatch(getAllDoctors());
+  }, [dispatch]);
 
   return (
     <div className="detailsContainer">
@@ -21,9 +29,15 @@ export default function DetailsPage() {
       {
         doctors.map((doctor) => (
           <div key={doctor.id} className="detailsDiv1">
-            <img src={doctorImage} alt="doc" className="detailsImage" />
+            <img src={doctor.image} alt="doc" className="detailsImage" />
             <div className="detailsDiv2">
-              <h3 className="detailsName">{doctor.name}</h3>
+              <h3 className="detailsName">
+                Dr.
+                {' '}
+                {doctor.name.toUpperCase()}
+                {' '}
+                {doctor.lastname.toUpperCase()}
+              </h3>
               <h4 className="detailsSubName">Passion for Health</h4>
               <div className="detailsDiv3">
                 <p>Speciality:</p>
