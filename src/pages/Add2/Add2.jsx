@@ -59,13 +59,8 @@ export default function Add2() {
     axios(config)
       .then((response) => {
         // console.log(JSON.stringify(response.data));
-        console.log(response);
-        console.log(response.data.data.image.url);
         setAnsApi(response.data.data.image.url);
         setIsLoader(isLoader);
-      })
-      .catch((error) => {
-        console.log(error);
       });
   };
 

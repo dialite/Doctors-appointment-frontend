@@ -5,25 +5,27 @@
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .addForm > label {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-  
-  input, select {
+
+  input,
+  select {
     font-size: 1rem;
     border-radius: 10px;
     padding: 10px;
     background-color: whitesmoke;
     border: none;
   }
-  
-  input:focus, select:focus {
+
+  input:focus,
+  select:focus {
     outline: 3px solid #8eb904;
   }
-  
+
   .addButton {
     background-color: #8eb904;
     color: white;
@@ -35,7 +37,7 @@
     font-size: 1rem;
     width: 100%;
   }
-  
+
   .addButton:hover {
     background-color: green;
     cursor: pointer;
@@ -51,25 +53,27 @@
     gap: 30px;
     width: 300px;
   }
-  
+
   .addForm > label {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-  
-  input, select {
+
+  input,
+  select {
     font-size: 1rem;
     border-radius: 10px;
     padding: 10px;
     background-color: whitesmoke;
     border: none;
   }
-  
-  input:focus, select:focus {
+
+  input:focus,
+  select:focus {
     outline: 3px solid #8eb904;
   }
-  
+
   .addButton {
     background-color: #8eb904;
     color: white;
@@ -81,7 +85,7 @@
     font-size: 1rem;
     width: 100%;
   }
-  
+
   .addButton:hover {
     background-color: green;
     cursor: pointer;
