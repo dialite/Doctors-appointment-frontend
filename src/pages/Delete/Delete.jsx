@@ -46,9 +46,9 @@ export default function Delete() {
                 <td className="delName">
                   Dr.
                   {' '}
-                  {doctor.name}
+                  {doctor.name.toUpperCase()}
                   {' '}
-                  {doctor.lastname}
+                  {doctor.lastname.toUpperCase()}
                 </td>
                 <td>{doctor.speciality}</td>
                 <td><button type="button" className="delButton" onClick={() => handleButton(doctor.id)}>Delete</button></td>

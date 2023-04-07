@@ -7,6 +7,7 @@
   .detailsImage {
     width: 300px;
     height: auto;
+    border-radius: 50%;
   }
 
   .detailsDiv1 {
@@ -20,6 +21,7 @@
   .detailsDiv2 {
     display: flex;
     flex-direction: column;
+    width: 300px;
   }
 
   .detailsDiv3 {
@@ -75,6 +77,7 @@
   .detailsImage {
     width: 450px;
     height: auto;
+    border-radius: 50%;
   }
 
   .detailsDiv1 {
@@ -88,6 +91,7 @@
   .detailsDiv2 {
     display: flex;
     flex-direction: column;
+    width: 500px;
   }
 
   .detailsDiv3 {
