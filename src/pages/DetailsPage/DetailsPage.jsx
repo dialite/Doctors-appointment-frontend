@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './DetailsPage.css';
 import { BsFillCalendar2WeekFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllDoctors } from '../../redux/doctors/doctors';
+import { getDoctorsAction } from '../../redux/doctors/doctors';
 
 export default function DetailsPage() {
   /* Load Redux State */
@@ -20,7 +20,7 @@ export default function DetailsPage() {
 
   /* Clean - Redux movies store */
   useEffect(() => {
-    dispatch(getAllDoctors());
+    dispatch(getDoctorsAction());
   }, [dispatch]);
 
   return (

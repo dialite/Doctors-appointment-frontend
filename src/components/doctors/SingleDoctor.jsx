@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   FaTwitter, FaFacebookF, FaInstagramSquare, FaLinkedin,
 } from 'react-icons/fa';
-import { getDoctorsAction } from '../../redux/doctors/doctors';
 import baseUrl from '../helpers/data';
 
 const socialIcons = [
