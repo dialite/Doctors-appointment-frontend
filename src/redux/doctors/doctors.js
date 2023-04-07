@@ -1,75 +1,80 @@
 // movies.js
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 // Actions... types
-const GET_DOCTOR = 'doctors/GET_DOCTOR';
-const GET_ALL_DOCTORS = 'doctors/GET_ALL_DOCTORS';
-const DELETE_DOCTOR = 'doctors/DELETE_DOCTOR';
-const UPDATE_MOVIE = 'doctors/UPDATE_MOVIE';
+const GET_DOCTORS = 'DOCTOR_RESERVATION/GET_DOCTORS';
+const CREATE_DOCTORS = 'DOCTOR_RESERVATION/CREATE_DOCTORS';
+const DELETE_DOCTOR = 'DOCTOR_RESERVATION/DELETE_DOCTOR';
+const UPDATE_DOCTOR = 'DOCTOR_RESERVATION/UPDATE_DOCTOR';
 
-// Reducer
-export default function reducer(state = [], action) {
+const initialState = [];
+
+const getDoctors = (payload) => ({
+  type: GET_DOCTORS,
+  payload,
+});
+
+const createAllDoctors = (payload) => ({
+  type: CREATE_DOCTORS,
+  payload,
+});
+
+const deleteDoctor = (payload) => ({
+  type: DELETE_DOCTOR,
+  payload,
+});
+
+const updateDoctor = (payload) => ({
+  type: UPDATE_DOCTOR,
+  payload,
+});
+
+// Actions
+
+export const getDoctorsAction = () => async (dispatch) => {
+  const response = await axios.get('https://json-api-nro9.onrender.com/doctors');
+  dispatch(getDoctors(response.data));
+};
+
+export const createAllDoctorsAction = (doctor, userId) => async (dispatch) => {
+  const response = await axios.post('https://json-api-nro9.onrender.com/doctors', {
+    doctor,
+    userId,
+  });
+  dispatch(createAllDoctors(response.data));
+};
+
+export const deleteDoctorAction = (id) => async (dispatch) => {
+  const response = await axios.delete(`https://json-api-nro9.onrender.com/doctors/${id}`);
+  dispatch(deleteDoctor(response.data));
+};
+
+export const updateDoctorAction = (id, doctor) => async (dispatch) => {
+  const response = await axios.put(`https://json-api-nro9.onrender.com/doctors/${id}`, {
+    doctor,
+  });
+  dispatch(updateDoctor(response.data));
+};
+
+// doctorReducer
+const doctorReducer = (state = initialState, action) => {
   switch (action.type) {
-    // do reducer stuff
-    // GET doctor from the API
-    case `${GET_DOCTOR}/fulfilled`:
+    case GET_DOCTORS:
       return action.payload;
-    // GET all doctors from the API
-    case `${GET_ALL_DOCTORS}/fulfilled`:
-      return action.payload;
-    // DELETE doctor from the API
-    case `${DELETE_DOCTOR}/fulfilled`:
-      // get the doctor id from the action metadata
-      return state.filter((doctor) => doctor.id !== action.meta.arg);
-      // filter out the deleted doctor and return the new state array
-
-    // UPDATE movies from the API
-    case UPDATE_MOVIE:
-      return action.payload;
-    default: return state;
+    case CREATE_DOCTORS:
+      return [...state, action.payload];
+    case DELETE_DOCTOR:
+      return state.filter((doctor) => doctor.id !== action.payload);
+    case UPDATE_DOCTOR:
+      return state.map((doctor) => {
+        if (doctor.id === action.payload.id) {
+          return action.payload;
+        }
+        return doctor;
+      });
+    default:
+      return state;
   }
-}
+};
 
-// Action Creators
-export const getDoctor = createAsyncThunk(GET_DOCTOR, async (id) => {
-  const getDoctorUrl = `https://json-api-nro9.onrender.com/doctors/${id}`;
-  const response = await fetch(getDoctorUrl,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  const result = await response.json();
-  return result;
-}); /* getDoctor - createAsyncThunk - API */
-
-export const getAllDoctors = createAsyncThunk(GET_ALL_DOCTORS, async () => {
-  const getAllDoctorsUrl = 'https://json-api-nro9.onrender.com/doctors';
-  const response = await fetch(getAllDoctorsUrl,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  const result = await response.json();
-  return result;
-}); /* getAllDoctors - createAsyncThunk - API */
-
-export const deleteDoctor = createAsyncThunk(DELETE_DOCTOR, async (id) => {
-  const deleteDoctorUrl = `https://json-api-nro9.onrender.com/doctors/${id}`;
-  const response = await fetch(deleteDoctorUrl,
-    {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  const result = await response.json();
-  return result;
-}); /* getDoctor - createAsyncThunk - API */
-
-export function updateMovie(obj) {
-  return { type: UPDATE_MOVIE, payload: obj };
-} /* updateMovie - searchBar component */
+export default doctorReducer;
