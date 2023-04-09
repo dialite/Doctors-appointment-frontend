@@ -1,6 +1,11 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 
+.navWelcome {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 /* Mobile View */
 @media only screen and (max-device-width: 480px) {
   .navContainer {
@@ -47,7 +52,9 @@
   }
   
   .select {
-    padding: 0;
+    padding: 10px !important;
+    background-color: #8eb904;
+    color: white;
   }
 }
 
