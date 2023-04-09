@@ -42,7 +42,7 @@ function App() {
             {user && (
               <>
                 <Route path="/home" element={<Home />} />
-                <Route path="/reserve" element={<Reserve />} />
+                <Route path="/reserve/:id" element={<Reserve />} />
                 <Route path="/myreservations" element={<MyReservations />} />
                 <Route path="/add" element={<Add />} />
                 <Route path="/add2" element={<Add2 />} />
