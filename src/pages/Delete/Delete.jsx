@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDoctorsAction, deleteDoctorAction } from '../../redux/doctors/doctors';
+import { getAllDoctors, deleteDoctor } from '../../redux/doctors/doctors';
 
 import './Delete.css';
 
@@ -16,13 +16,13 @@ export default function Delete() {
     // eslint-disable-next-line no-alert
     const confirmed = window.confirm('Are you sure you want to do this?');
     if (confirmed) {
-      dispatch(deleteDoctorAction(id));
+      dispatch(deleteDoctor(id));
     }
   };
 
   /* Clean - Redux movies store */
   useEffect(() => {
-    dispatch(getDoctorsAction());
+    dispatch(getAllDoctors());
   }, [dispatch]);
 
   return (
