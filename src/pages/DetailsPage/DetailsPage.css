@@ -5,9 +5,10 @@
   }
 
   .detailsImage {
-    width: 300px;
+    width: 250px;
     height: auto;
     border-radius: 50%;
+    border: 1px solid gainsboro;
   }
 
   .detailsDiv1 {
@@ -75,9 +76,10 @@
   }
 
   .detailsImage {
-    width: 450px;
+    width: 400px;
     height: auto;
     border-radius: 50%;
+    border: 1px solid gainsboro;
   }
 
   .detailsDiv1 {
