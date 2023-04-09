@@ -29,18 +29,15 @@ export default function Add() {
     setInit({ ...init, [name]: value });
   };
 
-  const handleNext = () => {
-    if (init.name && init.lastname && init.speciality && (init.experience > 0) && (init.consultation > 0)) {
-      dispatch(addDoctor(init));
-      history('/add2');
-    } else {
-      alert('Fill out all fields');
-    }
+  const handleNext = (e) => {
+    e.preventDefault();
+    dispatch(addDoctor(init));
+    history('/add2');
   };
 
   return (
     <div>
-      <form className="addForm">
+      <form className="addForm" onSubmit={handleNext}>
         <h2>Add Doctor - Step 1/3</h2>
 
         <label htmlFor="name">
@@ -53,6 +50,7 @@ export default function Add() {
             autoComplete="off"
             value={init.name}
             onChange={handleInputChange}
+            required
           />
         </label>
 
@@ -77,6 +75,7 @@ export default function Add() {
             name="speciality"
             value={init.speciality}
             onChange={handleInputChange}
+            required
           >
             <option value="">--Please choose an option--</option>
             <option value="Cardiologist">Cardiologist</option>
@@ -97,6 +96,7 @@ export default function Add() {
             autoComplete="off"
             value={init.experience}
             onChange={handleInputChange}
+            required
           />
         </label>
 
@@ -111,10 +111,11 @@ export default function Add() {
             autoComplete="off"
             value={init.consultation}
             onChange={handleInputChange}
+            required
           />
         </label>
 
-        <button type="button" className="addButton" onClick={handleNext}>Next</button>
+        <button type="submit" className="addButton">Next</button>
       </form>
 
     </div>
