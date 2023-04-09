@@ -45,6 +45,10 @@
   .socialContainer {
     display: none;
   }
+  
+  .select {
+    padding: 0;
+  }
 }
 
 /* Desktop View */
@@ -69,6 +73,7 @@
     color: black;
     padding: 10px 40px 10px 20px;
     font-weight: 500;
+    width: 200px;
   }
 
   .viewContainer > a > p:hover,
