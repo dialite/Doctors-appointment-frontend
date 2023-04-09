@@ -37,6 +37,10 @@
   margin-right: 30px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Mobile View */
 @media only screen and (max-device-width: 480px) {
   .AppContainer {
