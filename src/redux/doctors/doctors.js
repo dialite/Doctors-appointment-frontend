@@ -32,7 +32,7 @@ export default function reducer(state = [], action) {
 
 // Action Creators
 export const getDoctor = createAsyncThunk(GET_DOCTOR, async (id) => {
-  const getDoctorUrl = `https://json-api-nro9.onrender.com/doctors/${id}`;
+  const getDoctorUrl = `https://json-api-ten.vercel.app/doctors/${id}`;
   const response = await fetch(getDoctorUrl,
     {
       method: 'GET',
@@ -45,7 +45,7 @@ export const getDoctor = createAsyncThunk(GET_DOCTOR, async (id) => {
 }); /* getDoctor - createAsyncThunk - API */
 
 export const getAllDoctors = createAsyncThunk(GET_ALL_DOCTORS, async () => {
-  const getAllDoctorsUrl = 'https://json-api-nro9.onrender.com/doctors';
+  const getAllDoctorsUrl = 'https://json-api-ten.vercel.app/doctors';
   const response = await fetch(getAllDoctorsUrl,
     {
       method: 'GET',
@@ -58,7 +58,7 @@ export const getAllDoctors = createAsyncThunk(GET_ALL_DOCTORS, async () => {
 }); /* getAllDoctors - createAsyncThunk - API */
 
 export const deleteDoctor = createAsyncThunk(DELETE_DOCTOR, async (id) => {
-  const deleteDoctorUrl = `https://json-api-nro9.onrender.com/doctors/${id}`;
+  const deleteDoctorUrl = `https://json-api-ten.vercel.app/doctors/${id}`;
   const response = await fetch(deleteDoctorUrl,
     {
       method: 'DELETE',

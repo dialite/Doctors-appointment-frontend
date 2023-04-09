@@ -22,7 +22,7 @@ export default function reducer(state = [], action) {
 
 // Action Creators
 export const finishDoctor = createAsyncThunk(FINISH_DOCTOR, async (add) => {
-  const finishDoctorUrl = 'https://json-api-nro9.onrender.com/doctors';
+  const finishDoctorUrl = 'https://json-api-ten.vercel.app/doctors';
   const response = await fetch(finishDoctorUrl,
     {
       method: 'POST',
