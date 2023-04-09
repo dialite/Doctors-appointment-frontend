@@ -76,6 +76,11 @@
     color: white !important;
     background-color: #8eb904;
   }
+  
+  .logout:hover {
+    color: white !important;
+    background-color: tomato !important;
+  }
 
   .view {
     display: block;
