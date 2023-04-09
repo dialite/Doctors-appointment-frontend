@@ -1,44 +1,43 @@
-/* eslint-disable react/jsx-key */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import SingleDoctor from '../../components/doctors/SingleDoctor';
-import { getDoctorsAction } from '../../redux/doctors/doctors';
+import { getAllDoctors } from '../../redux/doctors/doctors';
 import './Home.css';
 
 const Home = () => {
-  const doctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDoctorsAction());
+    dispatch(getAllDoctors());
   }, [dispatch]);
 
+  const doctors = useSelector((state) => state.doctor);
+
   return (
-    <div className="home-page">
-      <>
-        <div className="home-page__hero">
-          <h1>DOCTORS ONLINE</h1>
-          <p>Find the best doctors in your area</p>
-        </div>
-        {
+    <div>
+      <div className="homeTitle">
+        <h1>DOCTORS ONLINE</h1>
+        <p>Find the best doctors in your area</p>
+      </div>
+      {
           doctors && (
-            <div className="home-page__doctors">
+            <div className="doctorContainer">
                 {doctors.map((doctor) => (
-                  <Link to={`/detailspage/${doctor.id}`}>
-                    <SingleDoctor
-                      name={doctor.name}
-                      lastname={doctor.lastname}
-                      image={doctor.image}
-                      speciality={doctor.speciality}
-                      experience={doctor.experience}
-                    />
+                  <Link to={`/detailspage/${doctor.id}`} key={doctor.id}>
+                    <div className="doctor">
+                      <img src={doctor.image} alt={`doctor${doctor.id}`} />
+                      <h3>
+                        {doctor.name}
+                        {' '}
+                        {doctor.lastname}
+                      </h3>
+                      <p>{doctor.speciality}</p>
+                    </div>
                   </Link>
                 ))}
             </div>
           )
         }
-      </>
     </div>
   );
 };

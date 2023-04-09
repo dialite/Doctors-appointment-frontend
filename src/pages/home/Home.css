@@ -1,28 +1,26 @@
-.home-page {
+.homeTitle {
+  margin-bottom: 50px;
+}
+
+.doctorContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  height: 100vh;
-  margin: 0 30px;
+  gap: 30px;
 }
 
-.home-details {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0 30px;
+.doctorContainer > a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
 
-.doctor-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.doctor-details > img {
+.doctor > img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin-right: 30px;
+  border: 1px solid gainsboro;
+  margin: 0;
 }
