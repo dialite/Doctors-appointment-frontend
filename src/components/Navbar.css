@@ -50,7 +50,7 @@
   .socialContainer {
     display: none;
   }
-  
+
   .select {
     padding: 10px !important;
     background-color: #8eb904;
@@ -88,7 +88,7 @@
     color: white !important;
     background-color: #8eb904;
   }
-  
+
   .logout:hover {
     color: white !important;
     background-color: tomato !important;
