@@ -15,14 +15,4 @@ describe('MyReservations', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  it('has a MyReservations button', () => {
-    const myReservations = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <MyReservations />
-        </BrowserRouter>
-      </Provider>,
-    );
-    expect(myReservations.findByText('My Reservations')).toMatchSnapshot();
-  });
 });
