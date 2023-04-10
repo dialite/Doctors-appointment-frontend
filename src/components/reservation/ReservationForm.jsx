@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ReservationForm.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getAllDoctors } from '../../redux/doctors/doctors';
-import { addReservation } from '../../redux/doctors/reservations';
+import { addReservation, getAllReservations } from '../../redux/doctors/reservations';
 
 const ReservationForm = () => {
   /* Setup Redux dispatch */
@@ -52,6 +52,7 @@ const ReservationForm = () => {
     e.preventDefault();
     dispatch(addReservation(init));
     alert('Reservation created successfully');
+    dispatch(getAllReservations());
     history('/');
   };
 

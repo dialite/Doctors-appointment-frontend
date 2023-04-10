@@ -9,7 +9,7 @@ import {
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
 import Reserve from './pages/Reserve';
-import MyReservations from './pages/MyReservations';
+import MyReservations from './pages/MyReservations/MyReservations';
 import Add from './pages/Add/Add';
 import Delete from './pages/Delete/Delete';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
