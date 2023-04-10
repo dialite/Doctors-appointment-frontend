@@ -15,4 +15,14 @@ describe('Reserve', () => {
     );
     expect(tree).toMatchSnapshot();
   });
+  it('has a Reserve button', () => {
+    const reserve = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Reserve />
+        </BrowserRouter>
+      </Provider>,
+    );
+    expect(reserve.findByText('Reserve')).toMatchSnapshot();
+  });
 });
