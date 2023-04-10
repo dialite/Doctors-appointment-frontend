@@ -10,8 +10,10 @@ import '@testing-library/jest-dom';
 const mockStore = configureStore([thunk]);
 
 describe('Home component', () => {
-  it('should render the title and subtitle', () => {
-    const store = mockStore({
+  let store;
+
+  beforeEach(() => {
+    store = mockStore({
       doctor: [
         {
           id: 1,
@@ -29,6 +31,11 @@ describe('Home component', () => {
         },
       ],
     });
+
+    return store.dispatch(getAllDoctors());
+  });
+
+  it('should render the title and subtitle', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
@@ -42,28 +49,6 @@ describe('Home component', () => {
   });
 
   it('should render the doctors', async () => {
-    const store = mockStore({
-      doctor: [
-        {
-          id: 1,
-          name: 'John',
-          lastname: 'Doe',
-          speciality: 'Cardiology',
-          image: 'https://example.com/doctor1.jpg',
-        },
-        {
-          id: 2,
-          name: 'Jane',
-          lastname: 'Smith',
-          speciality: 'Pediatrics',
-          image: 'https://example.com/doctor2.jpg',
-        },
-      ],
-    });
-
-    // Dispatch the action creator with the mock store.
-    await store.dispatch(getAllDoctors());
-
     render(
       <Provider store={store}>
         <BrowserRouter>
