@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './DetailsPage.css';
 import { BsFillCalendar2WeekFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
@@ -22,6 +22,13 @@ export default function DetailsPage() {
   useEffect(() => {
     dispatch(getAllDoctors());
   }, [dispatch]);
+
+  /* Redirect to RESERVE page by doctor */
+  const history = useNavigate();
+
+  const handleButton = () => {
+    history(`/reserve/${id}`);
+  };
 
   return (
     <div className="detailsContainer">
@@ -55,7 +62,7 @@ export default function DetailsPage() {
               </div>
 
               <div className="detailsDivButton">
-                <button type="button" className="detailsButton">
+                <button type="button" className="detailsButton" onClick={handleButton}>
                   <BsFillCalendar2WeekFill />
                   &nbsp;Reserve
                 </button>

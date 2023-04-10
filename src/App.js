@@ -7,9 +7,9 @@ import {
   Navigate,
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
+import Home from './pages/home/Home';
 import Reserve from './pages/Reserve';
-import MyReservations from './pages/MyReservations';
+import MyReservations from './pages/MyReservations/MyReservations';
 import Add from './pages/Add/Add';
 import Delete from './pages/Delete/Delete';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
@@ -42,7 +42,7 @@ function App() {
             {user && (
               <>
                 <Route path="/home" element={<Home />} />
-                <Route path="/reserve" element={<Reserve />} />
+                <Route path="/reserve/:id" element={<Reserve />} />
                 <Route path="/myreservations" element={<MyReservations />} />
                 <Route path="/add" element={<Add />} />
                 <Route path="/add2" element={<Add2 />} />

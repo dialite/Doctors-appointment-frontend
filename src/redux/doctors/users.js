@@ -22,7 +22,7 @@ export default function reducer(state = [], action) {
 
 // Action Creators
 export const getAllUsers = createAsyncThunk(GET_ALL_USERS, async () => {
-  const getAllUsersUrl = 'https://json-api-ten.vercel.app/users';
+  const getAllUsersUrl = 'https://json-api-dwvi.onrender.com/users';
   const response = await fetch(getAllUsersUrl,
     {
       method: 'GET',

@@ -5,7 +5,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const GET_DOCTOR = 'doctors/GET_DOCTOR';
 const GET_ALL_DOCTORS = 'doctors/GET_ALL_DOCTORS';
 const DELETE_DOCTOR = 'doctors/DELETE_DOCTOR';
-const UPDATE_MOVIE = 'doctors/UPDATE_MOVIE';
+const UPDATE_DOCTOR = 'doctors/UPDATE_DOCTOR';
 
 // Reducer
 export default function reducer(state = [], action) {
@@ -23,8 +23,8 @@ export default function reducer(state = [], action) {
       return state.filter((doctor) => doctor.id !== action.meta.arg);
       // filter out the deleted doctor and return the new state array
 
-    // UPDATE movies from the API
-    case UPDATE_MOVIE:
+    // UPDATE_DOCTOR from the API
+    case UPDATE_DOCTOR:
       return action.payload;
     default: return state;
   }
@@ -32,7 +32,7 @@ export default function reducer(state = [], action) {
 
 // Action Creators
 export const getDoctor = createAsyncThunk(GET_DOCTOR, async (id) => {
-  const getDoctorUrl = `https://json-api-ten.vercel.app/doctors/${id}`;
+  const getDoctorUrl = `https://json-api-dwvi.onrender.com/doctors/${id}`;
   const response = await fetch(getDoctorUrl,
     {
       method: 'GET',
@@ -45,7 +45,7 @@ export const getDoctor = createAsyncThunk(GET_DOCTOR, async (id) => {
 }); /* getDoctor - createAsyncThunk - API */
 
 export const getAllDoctors = createAsyncThunk(GET_ALL_DOCTORS, async () => {
-  const getAllDoctorsUrl = 'https://json-api-ten.vercel.app/doctors';
+  const getAllDoctorsUrl = 'https://json-api-dwvi.onrender.com/doctors';
   const response = await fetch(getAllDoctorsUrl,
     {
       method: 'GET',
@@ -58,7 +58,7 @@ export const getAllDoctors = createAsyncThunk(GET_ALL_DOCTORS, async () => {
 }); /* getAllDoctors - createAsyncThunk - API */
 
 export const deleteDoctor = createAsyncThunk(DELETE_DOCTOR, async (id) => {
-  const deleteDoctorUrl = `https://json-api-ten.vercel.app/doctors/${id}`;
+  const deleteDoctorUrl = `https://json-api-dwvi.onrender.com/doctors/${id}`;
   const response = await fetch(deleteDoctorUrl,
     {
       method: 'DELETE',
@@ -68,8 +68,8 @@ export const deleteDoctor = createAsyncThunk(DELETE_DOCTOR, async (id) => {
     });
   const result = await response.json();
   return result;
-}); /* getDoctor - createAsyncThunk - API */
+}); /* deleteDoctor - createAsyncThunk - API */
 
-export function updateMovie(obj) {
-  return { type: UPDATE_MOVIE, payload: obj };
-} /* updateMovie - searchBar component */
+export function updateDoctor(obj) {
+  return { type: UPDATE_DOCTOR, payload: obj };
+} /* updateDoctor */
