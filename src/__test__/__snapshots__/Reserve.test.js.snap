@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reserve has a eserve button 1`] = `Promise {}`;
-
-exports[`Reserve has a reserve button 1`] = `"reserve"`;
-
 exports[`Reserve renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        data-testid="title"
+      />
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      data-testid="title"
+    />
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
@@ -59,5 +59,21 @@ describe('Home component', () => {
 
     expect(screen.getByTestId('doctorContainer')).toBeInTheDocument();
     expect(screen.getAllByRole('link')).toHaveLength(2);
+    /* screen.debug(); */
+  });
+
+  it('should redirect to doctor detail page when doctor is clicked', async () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>,
+    );
+
+    const doctorLink = screen.getAllByRole('link')[0];
+    fireEvent.click(doctorLink);
+
+    expect(window.location.pathname).toBe('/detailspage/1');
   });
 });
