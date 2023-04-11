@@ -28,9 +28,11 @@ export default function reducer(state = [], action) {
   }
 }
 
+const reservationAPI = 'https://doctor-t64q.onrender.com/api/v1/appointments';
+
 // Action Creators
 export const addReservation = createAsyncThunk(ADD_RESERVATION, async (add) => {
-  const addReservationUrl = 'https://json-api-dwvi.onrender.com/reservations';
+  const addReservationUrl = reservationAPI;
   const response = await fetch(addReservationUrl,
     {
       method: 'POST',
@@ -44,7 +46,7 @@ export const addReservation = createAsyncThunk(ADD_RESERVATION, async (add) => {
 }); /* addReservation - createAsyncThunk - API */
 
 export const getAllReservations = createAsyncThunk(GET_ALL_RESERVATIONS, async () => {
-  const getAllReservationsUrl = 'https://json-api-dwvi.onrender.com/reservations';
+  const getAllReservationsUrl = reservationAPI;
   const response = await fetch(getAllReservationsUrl,
     {
       method: 'GET',

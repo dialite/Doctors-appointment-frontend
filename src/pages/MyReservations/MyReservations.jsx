@@ -48,11 +48,13 @@ export default function MyReservations() {
                 const doctor = doctors.find((doc) => doc.id.toString() === reserve.doctor_id.toString());
                 const doctorName = doctor ? `${doctor.name} ${doctor.lastname}` : '';
 
-                /* Datetime into dd/mm/yyyy hh:mm */
-                const date = new Date(reserve.datetime);
-                const formattedDate = date.toLocaleString('en-GB', {
-                  day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric',
-                });
+                const dateString = reserve.datetime.slice(0, 16);
+                const date = new Date(dateString);
+                const formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' });
+
+                const formattedTime = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+                const formattedDateTime = `${formattedDate}, ${formattedTime}`;
 
                 return (
                   <tr key={reserve.id}>
@@ -62,7 +64,7 @@ export default function MyReservations() {
                       {doctorName}
                     </td>
                     <td>{reserve.city}</td>
-                    <td>{formattedDate}</td>
+                    <td>{formattedDateTime}</td>
                   </tr>
                 );
               })}

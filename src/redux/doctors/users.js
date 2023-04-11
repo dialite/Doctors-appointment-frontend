@@ -20,9 +20,11 @@ export default function reducer(state = [], action) {
   }
 }
 
+const userAPI = 'https://doctor-t64q.onrender.com/api/v1/users';
+
 // Action Creators
 export const getAllUsers = createAsyncThunk(GET_ALL_USERS, async () => {
-  const getAllUsersUrl = 'https://json-api-dwvi.onrender.com/users';
+  const getAllUsersUrl = userAPI;
   const response = await fetch(getAllUsersUrl,
     {
       method: 'GET',

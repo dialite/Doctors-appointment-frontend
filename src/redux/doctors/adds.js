@@ -20,9 +20,11 @@ export default function reducer(state = [], action) {
   }
 }
 
+const doctorAPI = 'https://doctor-t64q.onrender.com/api/v1/doctors';
+
 // Action Creators
 export const finishDoctor = createAsyncThunk(FINISH_DOCTOR, async (add) => {
-  const finishDoctorUrl = 'https://json-api-dwvi.onrender.com/doctors';
+  const finishDoctorUrl = doctorAPI;
   const response = await fetch(finishDoctorUrl,
     {
       method: 'POST',
