@@ -57,12 +57,12 @@ const ReservationForm = () => {
   };
 
   return (
-    <>
+    <div data-testid="title">
       {
         doctorId && (
           <section className="reservation">
             <div className="reservation-container">
-              <h2 className="reservation-title">Make your reservations</h2>
+              <h2 className="reservation-title" data-testid="title">Make your reservations</h2>
               <h3>(*)only complete CITY and DATETIME fields</h3>
 
               <form className="addForm" onSubmit={handleReserve}>
@@ -124,7 +124,7 @@ const ReservationForm = () => {
           </section>
         )
       }
-    </>
+    </div>
 
   );
 };

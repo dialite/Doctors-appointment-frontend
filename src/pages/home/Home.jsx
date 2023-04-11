@@ -16,12 +16,12 @@ const Home = () => {
   return (
     <div>
       <div className="homeTitle">
-        <h1>DOCTORS ONLINE</h1>
-        <p>Find the best doctors in your area</p>
+        <h1 data-testid="title">DOCTORS ONLINE</h1>
+        <p data-testid="subtitle">Find the best doctors in your area</p>
       </div>
       {
           doctors && (
-            <div className="doctorContainer">
+            <div className="doctorContainer" data-testid="doctorContainer">
                 {doctors.map((doctor) => (
                   <Link to={`/detailspage/${doctor.id}`} key={doctor.id}>
                     <div className="doctor">

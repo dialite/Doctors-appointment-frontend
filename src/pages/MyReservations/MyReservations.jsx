@@ -30,7 +30,7 @@ export default function MyReservations() {
   // *********************************
 
   return (
-    <div>
+    <div data-testid="reservations-table">
       <h2>My Reservation</h2>
 
       {reservations.length > 0 ? (

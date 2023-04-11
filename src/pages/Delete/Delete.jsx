@@ -13,11 +13,7 @@ export default function Delete() {
   const dispatch = useDispatch();
 
   const handleButton = (id) => {
-    // eslint-disable-next-line no-alert
-    const confirmed = window.confirm('Are you sure you want to do this?');
-    if (confirmed) {
-      dispatch(deleteDoctor(id));
-    }
+    dispatch(deleteDoctor(id));
   };
 
   /* Clean - Redux movies store */
@@ -51,7 +47,7 @@ export default function Delete() {
                   {doctor.lastname.toUpperCase()}
                 </td>
                 <td>{doctor.speciality}</td>
-                <td><button type="button" className="delButton" onClick={() => handleButton(doctor.id)}>Delete</button></td>
+                <td><button type="button" className="delButton" onClick={() => handleButton(doctor.id)} data-testid="delete-button">Delete</button></td>
               </tr>
             ))
           }
