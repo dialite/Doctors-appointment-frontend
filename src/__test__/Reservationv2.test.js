@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import {
-  render, fireEvent, waitFor, screen,
+  render, fireEvent,
 } from '@testing-library/react';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -27,7 +27,7 @@ describe('ReservationForm', () => {
   });
 
   it('renders the reservation form', () => {
-    const { getByTestId } = render(
+    const { getByTestId, getByLabelText, getByText } = render(
       <Provider store={store}>
         <BrowserRouter>
           <ReservationForm />
@@ -35,7 +35,7 @@ describe('ReservationForm', () => {
       </Provider>,
     );
 
-    screen.debug();
+    /* screen.debug(); */
     const title = getByTestId('title');
     expect(title).toBeInTheDocument();
 
@@ -73,9 +73,7 @@ describe('ReservationForm', () => {
     const reserveButton = getByText(/reserve/i);
     fireEvent.click(reserveButton);
 
-    await waitFor(() => {
-      const successMessage = getByText(/reservation created successfully/i);
-      expect(successMessage).toBeInTheDocument();
-    });
+    /* redirect to /home after clicking nextButton */
+    expect(window.location.pathname).toBe('/home');
   });
 });

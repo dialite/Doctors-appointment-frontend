@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyReservations has a MyReservations button 1`] = `Promise {}`;
-
 exports[`MyReservations renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        data-testid="reservations-table"
+      >
         <h2>
           My Reservation
         </h2>
@@ -18,7 +18,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      data-testid="reservations-table"
+    >
       <h2>
         My Reservation
       </h2>
