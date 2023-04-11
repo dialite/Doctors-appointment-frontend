@@ -25,7 +25,13 @@ export default function MyReservations() {
   const storedUser = JSON.parse(localStorage.getItem('user')) || ''; /* Get User */
 
   /* Reservations filtered by user_id */
-  const reservations = allReservations.filter((reserve) => reserve.user_id === storedUser.id);
+  /* const reservations = allReservations.filter((reserve) => reserve.user_id === storedUser.id); */
+
+  /* Reservations filtered by user_id */
+  let reservations = [];
+  if (Array.isArray(allReservations)) {
+    reservations = allReservations.filter((reserve) => reserve.user_id === storedUser.id);
+  }
 
   // *********************************
 
