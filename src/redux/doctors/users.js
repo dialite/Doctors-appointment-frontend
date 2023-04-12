@@ -1,4 +1,4 @@
-// movies.js
+// users.js
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Actions... types

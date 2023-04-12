@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllDoctors } from '../../redux/doctors/doctors';
-import { getAllReservations } from '../../redux/doctors/reservations';
 import './Home.css';
 
 const Home = () => {
@@ -10,7 +9,6 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getAllDoctors());
-    dispatch(getAllReservations());
   }, [dispatch]);
 
   const doctors = useSelector((state) => state.doctor);
