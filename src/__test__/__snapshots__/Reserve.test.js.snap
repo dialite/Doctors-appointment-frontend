@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reserve renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <section
+          class="reservation"
+        >
+          <div
+            class="reservation-container"
+          >
+            <h2
+              class="reservation-title"
+              data-testid="title"
+            >
+              Make your reservations
+            </h2>
+            <h3>
+              (*)only complete CITY and DATETIME fields
+            </h3>
+            <form
+              class="addForm"
+            >
+              <label
+                for="city"
+              >
+                <b>
+                  City
+                </b>
+                <input
+                  autocomplete="off"
+                  id="city"
+                  name="city"
+                  placeholder="Enter City"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </label>
+              <label
+                for="datetime"
+              >
+                <b>
+                  Datetime
+                </b>
+                <input
+                  autocomplete="off"
+                  id="datetime"
+                  name="datetime"
+                  placeholder="Enter Datetime"
+                  required=""
+                  type="datetime-local"
+                  value=""
+                />
+              </label>
+              <label
+                for="doctor"
+              >
+                <b>
+                  Doctor
+                </b>
+                <input
+                  autocomplete="off"
+                  disabled=""
+                  id="doctor"
+                  name="doctor"
+                  type="text"
+                  value="Dr. undefined undefined"
+                />
+              </label>
+              <label
+                for="user"
+              >
+                <b>
+                  Username
+                </b>
+                <input
+                  autocomplete="off"
+                  disabled=""
+                  id="user"
+                  name="user"
+                  type="text"
+                  value=""
+                />
+              </label>
+              <input
+                class="addButton"
+                type="submit"
+                value="Reserve"
+              />
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <section
+        class="reservation"
+      >
+        <div
+          class="reservation-container"
+        >
+          <h2
+            class="reservation-title"
+            data-testid="title"
+          >
+            Make your reservations
+          </h2>
+          <h3>
+            (*)only complete CITY and DATETIME fields
+          </h3>
+          <form
+            class="addForm"
+          >
+            <label
+              for="city"
+            >
+              <b>
+                City
+              </b>
+              <input
+                autocomplete="off"
+                id="city"
+                name="city"
+                placeholder="Enter City"
+                required=""
+                type="text"
+                value=""
+              />
+            </label>
+            <label
+              for="datetime"
+            >
+              <b>
+                Datetime
+              </b>
+              <input
+                autocomplete="off"
+                id="datetime"
+                name="datetime"
+                placeholder="Enter Datetime"
+                required=""
+                type="datetime-local"
+                value=""
+              />
+            </label>
+            <label
+              for="doctor"
+            >
+              <b>
+                Doctor
+              </b>
+              <input
+                autocomplete="off"
+                disabled=""
+                id="doctor"
+                name="doctor"
+                type="text"
+                value="Dr. undefined undefined"
+              />
+            </label>
+            <label
+              for="user"
+            >
+              <b>
+                Username
+              </b>
+              <input
+                autocomplete="off"
+                disabled=""
+                id="user"
+                name="user"
+                type="text"
+                value=""
+              />
+            </label>
+            <input
+              class="addButton"
+              type="submit"
+              value="Reserve"
+            />
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

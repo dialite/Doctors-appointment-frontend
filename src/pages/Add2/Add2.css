@@ -51,6 +51,10 @@ input[type=file]::file-selector-button:hover,
   cursor: pointer;
 }
 
+.add2Attached {
+  font-size: 1.5rem;
+}
+
 /* Desktop View */
 @media only screen and (min-device-width: 480px) {
   .add2Container {

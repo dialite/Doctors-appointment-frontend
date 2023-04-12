@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ReservationForm.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getAllDoctors } from '../../redux/doctors/doctors';
-import { addReservation, getAllReservations } from '../../redux/doctors/reservations';
+import { addReservation } from '../../redux/doctors/reservations';
 
 const ReservationForm = () => {
   /* Setup Redux dispatch */
@@ -51,80 +51,75 @@ const ReservationForm = () => {
   const handleReserve = (e) => {
     e.preventDefault();
     dispatch(addReservation(init));
-    alert('Reservation created successfully');
-    dispatch(getAllReservations());
-    history('/');
+    /* dispatch(getAllReservations()); */
+    history('/home');
   };
 
   return (
-    <>
-      {
-        doctorId && (
-          <section className="reservation">
-            <div className="reservation-container">
-              <h2 className="reservation-title">Make your reservations</h2>
-              <h3>(*)only complete CITY and DATETIME fields</h3>
+    <div>
+      <section className="reservation">
+        <div className="reservation-container">
+          <h2 className="reservation-title" data-testid="title">Make your reservations</h2>
+          <h3>(*)only complete CITY and DATETIME fields</h3>
 
-              <form className="addForm" onSubmit={handleReserve}>
-                <label htmlFor="city">
-                  <b>City</b>
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="Enter City"
-                    autoComplete="off"
-                    value={init.city}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
+          <form className="addForm" onSubmit={handleReserve}>
+            <label htmlFor="city">
+              <b>City</b>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Enter City"
+                autoComplete="off"
+                value={init.city}
+                onChange={handleInputChange}
+                required
+              />
+            </label>
 
-                <label htmlFor="datetime">
-                  <b>Datetime</b>
-                  <input
-                    type="datetime-local"
-                    id="datetime"
-                    name="datetime"
-                    placeholder="Enter Datetime"
-                    autoComplete="off"
-                    value={init.datetime}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
+            <label htmlFor="datetime">
+              <b>Datetime</b>
+              <input
+                type="datetime-local"
+                id="datetime"
+                name="datetime"
+                placeholder="Enter Datetime"
+                autoComplete="off"
+                value={init.datetime}
+                onChange={handleInputChange}
+                required
+              />
+            </label>
 
-                <label htmlFor="doctor">
-                  <b>Doctor</b>
-                  <input
-                    type="text"
-                    id="doctor"
-                    name="doctor"
-                    autoComplete="off"
-                    value={`Dr. ${storedDoctor.name} ${storedDoctor.lastname}`}
-                    disabled
-                  />
-                </label>
+            <label htmlFor="doctor">
+              <b>Doctor</b>
+              <input
+                type="text"
+                id="doctor"
+                name="doctor"
+                autoComplete="off"
+                value={`Dr. ${storedDoctor.name} ${storedDoctor.lastname}`}
+                disabled
+              />
+            </label>
 
-                <label htmlFor="user">
-                  <b>Username</b>
-                  <input
-                    type="text"
-                    id="user"
-                    name="user"
-                    autoComplete="off"
-                    value={storedUser.username}
-                    disabled
-                  />
-                </label>
+            <label htmlFor="user">
+              <b>Username</b>
+              <input
+                type="text"
+                id="user"
+                name="user"
+                autoComplete="off"
+                value={storedUser.username}
+                disabled
+              />
+            </label>
 
-                <input type="submit" value="Reserve" className="addButton" />
-              </form>
-            </div>
-          </section>
-        )
-      }
-    </>
+            <input type="submit" value="Reserve" className="addButton" />
+          </form>
+        </div>
+      </section>
+    </div>
 
   );
 };

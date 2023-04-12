@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
-import axios from 'axios';
+/* import axios from 'axios'; */
 
 import './Add2.css';
 import './loader.css';
@@ -62,18 +63,19 @@ export default function Add2() {
     const imgbbToken = '165bc83a2b0f87e5ddc8af943b7fcba4';
     const APIurl = 'https://api.imgbb.com/1/upload?key=';
 
-    const config = {
-      method: 'post',
-      url: APIurl + imgbbToken,
-      headers: { 'Content-Type': 'multipart/form-data' },
-      data,
-    };
-
-    axios(config)
-      .then((response) => {
-        // console.log(JSON.stringify(response.data));
-        setAnsApi(response.data.data.image.url);
-        dispatch(addDoctor({ ...adds, image: response.data.data.image.url }));
+    fetch(APIurl + imgbbToken, {
+      method: 'POST',
+      body: data,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(JSON.stringify(data));
+        setAnsApi(data.data.image.url);
+        dispatch(addDoctor({ ...adds, image: data.data.image.url }));
+        setIsLoader(isLoader);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
         setIsLoader(isLoader);
       });
   };
@@ -98,8 +100,8 @@ export default function Add2() {
       */}
         {!ansApi && (
           <div>
-            <h3>Select doctor&lsquo;s image</h3>
-            <FileBase type="file" multiple={false} onDone={({ base64 }) => handleListing({ base64 })} />
+            <h3>Select doctor&apos;s image</h3>
+            <FileBase type="file" data-testid="add2File" multiple={false} onDone={({ base64 }) => handleListing({ base64 })} />
           </div>
         )}
 
@@ -107,7 +109,7 @@ export default function Add2() {
           listingData && (
             <div>
               <h3>Image Preview</h3>
-              <img className={`img ${listingData ? '' : 'hidden'}`} src={data64} alt="" />
+              <img className={`img ${listingData ? '' : 'hidden'}`} src={data64} alt="Preview" />
             </div>
           )
         }
@@ -122,7 +124,7 @@ export default function Add2() {
         }
 
         <div className={ansApi ? '' : 'hidden'}>
-          <h2>Image Attached!!</h2>
+          <h5 className="add2Attached">Image Attached!!</h5>
           <button type="button" className="add2Button" onClick={handleNext}>Next</button>
         </div>
 

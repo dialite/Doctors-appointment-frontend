@@ -26,9 +26,9 @@ export default function Navbar() {
 
   return (
     <div className="navContainer">
-      <GiHamburgerMenu onClick={handleView} className="hamView" />
+      <GiHamburgerMenu onClick={handleView} className="hamView" data-testid="GiHamburgerMenu" />
 
-      <div className={`${view} viewContainer`}>
+      <div className={`${view} viewContainer`} data-testid="viewContainer">
         <p className="viewDoctors">Doctors</p>
         <p className="navWelcome">
           Welcome

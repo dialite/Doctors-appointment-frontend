@@ -23,7 +23,7 @@ export default function Login({ authenticate }) {
   };
 
   //* ******************* */
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const [init, setInit] = useState(initialState);
 
@@ -37,17 +37,17 @@ export default function Login({ authenticate }) {
     e.preventDefault();
     dispatch(currentUser(init));
     authenticate(init);
-    history('/home');
+    navigate('/home');
   };
 
   return (
-    <div className="loginContainer">
+    <div className="loginContainer" data-testid="doctorLogin">
 
       <form className="loginForm" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2 data-testid="loginTitle">Login</h2>
 
         <label htmlFor="username">
-          <b>Username</b>
+          <b data-testid="loginUsername">Username</b>
           <select
             id="username"
             name="username"
@@ -64,7 +64,7 @@ export default function Login({ authenticate }) {
           </select>
         </label>
 
-        <button type="submit" className="addButton">Login</button>
+        <button type="submit" className="addButton" data-testid="loginButton">Login</button>
       </form>
 
     </div>
