@@ -22,6 +22,7 @@
 # Doctors-appointment-frontend <a name="hello-rails-react"></a>
 This is a frontend web application that displays all Doctor's appointments from an API.
 [Doctors-appointment-backend](https://github.com/dialite/Doctors-appointment-backend.git) API.
+URL Frontend: https://doctorsfinal.netlify.app/
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,7 +38,7 @@ This is a frontend web application that displays all Doctor's appointments from 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">ROR</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
   </ul>
 </details>
 
@@ -58,6 +59,9 @@ This is a frontend web application that displays all Doctor's appointments from 
 In order to run this project you need:
 
 - [API](https://github.com/dialite/Doctors-appointment-backend.git)
+- URL users: https://doctor-t64q.onrender.com/api/v1/users
+- URL doctors: https://doctor-t64q.onrender.com/api/v1/doctors
+- URL appointments: https://doctor-t64q.onrender.com/api/v1/appointments
 
 ### Setup
 
