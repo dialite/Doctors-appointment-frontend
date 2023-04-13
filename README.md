@@ -150,7 +150,9 @@ If you like this project and want to support me make cooler projects Give this p
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse community.
+Original idea by [Murat Korkmaz](https://www.behance.net/muratk).
+
+Original design [Vespa-Responsive-Redesign](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
