@@ -5,7 +5,7 @@ import { BsFillCalendar2WeekFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllDoctors } from '../../redux/doctors/doctors';
 
-export default function DetailsPage() {
+const DetailsPage = () => {
   /* Load Redux State */
   const allDoctors = useSelector((state) => state.doctor);
 
@@ -75,4 +75,6 @@ export default function DetailsPage() {
 
     </div>
   );
-}
+};
+
+export default DetailsPage;

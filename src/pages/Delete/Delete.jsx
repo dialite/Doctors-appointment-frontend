@@ -4,7 +4,7 @@ import { getAllDoctors, deleteDoctor } from '../../redux/doctors/doctors';
 
 import './Delete.css';
 
-export default function Delete() {
+const Delete = () => {
   /* Load Redux State */
   const doctors = useSelector((state) => state.doctor);
   // *********************************
@@ -59,4 +59,6 @@ export default function Delete() {
 
     </div>
   );
-}
+};
+
+export default Delete;

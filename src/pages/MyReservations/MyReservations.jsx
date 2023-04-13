@@ -6,7 +6,7 @@ import { getAllReservations } from '../../redux/doctors/reservations';
 
 import './MyReservations.css';
 
-export default function MyReservations() {
+const MyReservations = () => {
   /* Setup Redux dispatch */
   const dispatch = useDispatch();
 
@@ -83,4 +83,6 @@ export default function MyReservations() {
       )}
     </div>
   );
-}
+};
+
+export default MyReservations;

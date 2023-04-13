@@ -17,7 +17,7 @@ import Add2 from './pages/Add2/Add2';
 import Add3 from './pages/Add3/Add3';
 import Login from './pages/Login/Login';
 
-function App() {
+const App = () => {
   /* LocalStorage - Login */
   const storedUser = JSON.parse(localStorage.getItem('user')) || '';
 
@@ -60,6 +60,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

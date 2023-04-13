@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllUsers, currentUser } from '../../redux/doctors/users';
 import './Login.css';
 
-export default function Login({ authenticate }) {
+const Login = ({ authenticate }) => {
   /* Setup Redux dispatch */
   const dispatch = useDispatch();
 
@@ -69,8 +69,10 @@ export default function Login({ authenticate }) {
 
     </div>
   );
-}
+};
 
 Login.propTypes = {
   authenticate: PropTypes.func.isRequired,
 };
+
+export default Login;

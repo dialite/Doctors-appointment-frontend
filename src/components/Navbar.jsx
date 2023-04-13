@@ -7,7 +7,7 @@ import {
   FaTwitter, FaFacebookF, FaInstagramSquare, FaYoutube, FaLinkedin, FaRegCopyright,
 } from 'react-icons/fa';
 
-export default function Navbar() {
+const Navbar = () => {
   const [view, setView] = useState('view');
 
   const handleView = () => {
@@ -58,4 +58,6 @@ export default function Navbar() {
 
     </div>
   );
-}
+};
+
+export default Navbar;

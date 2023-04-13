@@ -6,7 +6,7 @@ import './Add.css';
 import { useNavigate } from 'react-router-dom';
 import { addDoctor } from '../../redux/doctors/adds';
 
-export default function Add() {
+const Add = () => {
   /* Setup Redux dispatch */
   const dispatch = useDispatch();
 
@@ -120,4 +120,6 @@ export default function Add() {
 
     </div>
   );
-}
+};
+
+export default Add;

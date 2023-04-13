@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
-/* import axios from 'axios'; */
 
 import './Add2.css';
 import './loader.css';
@@ -10,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { addDoctor, finishDoctor } from '../../redux/doctors/adds';
 
-export default function Add2() {
+const Add2 = () => {
   /* Load Redux State */
   const adds = useSelector((state) => state.add);
 
@@ -27,8 +26,6 @@ export default function Add2() {
 
   let data64; // init variable
 
-  // console.log(listingData)
-
   /* Put this Conditional for starting web app o refreshing
    * to avoid errors because initial value is ""
    * initial value:
@@ -37,7 +34,6 @@ export default function Add2() {
 
   if (listingData !== '') {
     data64 = listingData.selectedFile.split(',');
-    // console.log(data64); //data64 = image converted to base64
   }
 
   // Input File
@@ -56,7 +52,6 @@ export default function Add2() {
 
     const data = new FormData();
     data.append('image', data64[1]);
-    // data.append('name', 'prueba01')
 
     // imgbb's personal Token
     // https://es.imgbb.com/
@@ -69,7 +64,6 @@ export default function Add2() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // console.log(JSON.stringify(data));
         setAnsApi(data.data.image.url);
         dispatch(addDoctor({ ...adds, image: data.data.image.url }));
         setIsLoader(isLoader);
@@ -132,4 +126,6 @@ export default function Add2() {
 
     </div>
   );
-}
+};
+
+export default Add2;
